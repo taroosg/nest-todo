@@ -4,7 +4,6 @@
   "description": "",
   "author": "",
   "private": true,
-  "main": "dist/index.js",
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
