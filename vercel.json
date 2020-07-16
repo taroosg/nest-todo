@@ -9,7 +9,7 @@
   ],
   "routes": [
     {
-      "src": "/item/(.*)",
+      "src": "/(.*)",
       "methods": [
         "GET",
         "POST",
