@@ -1,11 +1,11 @@
 {
   "type": "sqlite",
-  "database": "./data/dev.sqlite",
+  "database": "data/dev.sqlite",
   "entities": [
-    "./dist/entities/**/*.entity.js"
+    "dist/entities/**/*.entity.js"
   ],
   "migrations": [
-    "./dist/migrations/**/*.js"
+    "dist/migrations/**/*.js"
   ],
   "logging": true
 }
