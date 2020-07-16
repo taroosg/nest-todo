@@ -25,9 +25,14 @@ let ItemService = class ItemService {
         return await this.itemRepository.find();
     }
     async findPublicAll() {
-        const items = await this.itemRepository.find();
+        const items = await this.findAll();
         return items.map((x) => {
-            return { id: x.id, todo: x.todo, limit: x.limit, isDone: x.isDone };
+            return {
+                id: x.id,
+                todo: x.todo,
+                limit: x.limit,
+                isDone: x.isDone,
+            };
         });
     }
     async create(item) {
