@@ -17,6 +17,12 @@ export class Item {
   @Column("datetime")
   limit: Date;
 
+  @Column("boolean", { default: false })
+  isDone: boolean;
+
+  @Column({ default: "root" })
+  deletePassword?: string;
+
   @CreateDateColumn()
   readonly createdAt?: Date;
 
