@@ -9,7 +9,7 @@ import {
   HttpException,
   HttpStatus,
 } from "@nestjs/common";
-import { ItemService } from "./item.service";
+import { ItemService, PublicItem } from "./item.service";
 import { Item } from "../entities/item.entity";
 import { CreateItemDTO, UpdateItemDTO, DeleteItemDTO } from "./item.dto";
 import { DeleteResult, UpdateResult, InsertResult } from "typeorm";
@@ -19,7 +19,7 @@ export class ItemController {
   constructor(private readonly service: ItemService) {}
 
   @Get()
-  async getPublicItemList(): Promise<Item[]> {
+  async getPublicItemList(): Promise<PublicItem[]> {
     return await this.service.findPublicAll();
   }
 

@@ -21,7 +21,7 @@ export class Item {
   isDone: boolean;
 
   @Column({ default: "root" })
-  deletePassword?: string;
+  deletePassword: string;
 
   @CreateDateColumn()
   readonly createdAt?: Date;

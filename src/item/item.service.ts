@@ -4,6 +4,9 @@ import { CreateItemDTO } from "./item.dto"; //追加！
 import { Repository, InsertResult, UpdateResult, DeleteResult } from "typeorm"; //追加！
 import { InjectRepository } from "@nestjs/typeorm"; //追加！
 
+// deletePasswordを除いたデータ型を定義
+export type PublicItem = Omit<Item, "deletePassword">;
+
 @Injectable()
 export class ItemService {
   constructor(
@@ -15,7 +18,7 @@ export class ItemService {
     return await this.itemRepository.find();
   }
 
-  async findPublicAll(): Promise<Item[]> {
+  async findPublicAll(): Promise<PublicItem[]> {
     const items = await this.itemRepository.find();
     return items.map((x) => {
       return { id: x.id, todo: x.todo, limit: x.limit, isDone: x.isDone };
