@@ -60,7 +60,7 @@ export class ItemController {
     @Param("id") id: string,
     @Body() deleteItem: DeleteItemDTO,
   ) {
-    const item = this.service.find(Number(id));
+    const item = await this.service.find(Number(id));
     if (!item) {
       throw new HttpException(
         {
